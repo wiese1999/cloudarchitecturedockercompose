@@ -6,7 +6,7 @@ function App() {
 
     // Fetch all greetings from the backend
     useEffect(() => {
-        fetch('http://backend:8080/api/greetings')
+        fetch('/api/greetings')
             .then((response) => response.json())
             .then((data) => setGreetings(data))
             .catch((error) => console.error('Error:', error));
@@ -17,7 +17,7 @@ function App() {
         e.preventDefault();
         const greeting = { message: newMessage };
 
-        fetch('http://backend:8080/api/greetings', {
+        fetch('/api/greetings', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(greeting),

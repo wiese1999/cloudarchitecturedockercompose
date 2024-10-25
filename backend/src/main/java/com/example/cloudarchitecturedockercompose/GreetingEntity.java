@@ -1,11 +1,9 @@
 package com.example.cloudarchitecturedockercompose;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "greeting_entity")
 public class GreetingEntity {
 
     @Id

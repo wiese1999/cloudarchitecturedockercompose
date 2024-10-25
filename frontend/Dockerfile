@@ -1,20 +1,14 @@
-# Use the official Node.js image for build
-FROM node:14 AS build
-
-# Set working directory
+# Use Node.js to build the React app
+FROM node:16 AS build
 WORKDIR /app
-
-# Copy the project files
 COPY package.json ./
 COPY package-lock.json ./
+RUN npm install
 COPY ./ ./
+RUN npm run build  # This will create a production build in the 'build' folder
 
-# Install dependencies and build the app
-RUN npm install && npm run build
-
-# Use Nginx to serve the app
+# Use Nginx to serve the production build
 FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
-
-# Expose port 80
 EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
