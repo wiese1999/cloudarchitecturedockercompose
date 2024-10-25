@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css'; // Import the new CSS
 
 function App() {
     const [greetings, setGreetings] = useState([]);
