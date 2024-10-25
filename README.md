@@ -75,7 +75,7 @@ Bevor du das Projekt ausführst, stelle sicher, dass die folgenden Tools install
 ### 1. Repository klonen
 
 ```bash
-git clone https://github.com/dein-benutzername/cloudarchitecturedockercompose.git
+git clone https://github.com/wiese1999/cloudarchitecturedockercompose.git
 cd cloudarchitecturedockercompose
 ```
 
